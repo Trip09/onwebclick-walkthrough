@@ -1,0 +1,7 @@
+parameters:
+#    testing_bdd.example.class: Testing\BDDBundle\Example
+
+services:
+#    testing_bdd.example:
+#        class: %testing_bdd.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

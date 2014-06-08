@@ -1,0 +1,3 @@
+testing_bdd_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: TestingBDDBundle:Default:index }

@@ -1,0 +1,21 @@
+# behat.yml
+default:
+    paths:
+        features: src/Testing/BDDBundle/Features/
+        bootstrap: %behat.paths.features%/bootstrap
+    context:
+        class:  Testing\BDDBundle\Features\Context\FeatureContext
+
+    extensions:
+        Behat\Symfony2Extension\Extension:
+            mink_driver: true
+
+        Behat\MinkExtension\Extension:
+            base_url:  'http://walkthrough.local/'
+            default_session: 'symfony2'
+
+        # will use this in a next article
+        #VIPSoft\DoctrineDataFixturesExtension\Extension:
+        #  lifetime: feature
+        #  autoload: true
+        #  fixtures: ~
