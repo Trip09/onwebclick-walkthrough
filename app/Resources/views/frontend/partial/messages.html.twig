@@ -1,0 +1,16 @@
+{% set hasMessage = false %}
+
+{% for msgType in ['success', 'info', 'warning', 'danger'] if not hasMessage %}
+    {% set hasMessage = app.session.flashbag.has(msgType) %}
+{% endfor %}
+<div class="container-fluid">
+    <div id="flashContainer" {{ hasMessage ? 'style="display:block"' : '' }}>
+        {% for msgType in ['success', 'info', 'warning', 'danger'] %}
+            {% for flashMessage in app.session.flashbag.get(msgType) %}
+                <div class="alert alert-{{ msgType }}">
+                    {{ flashMessage |raw }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
