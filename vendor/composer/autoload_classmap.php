@@ -358,9 +358,5 @@ return array(
     'SessionHandlerInterface' => $vendorDir . '/symfony/symfony/src/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'SqlFormatter' => $vendorDir . '/jdorn/sql-formatter/lib/SqlFormatter.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/Text/Template.php',
-    'lessc' => $vendorDir . '/leafo/lessphp/lessc.inc.php',
-    'lessc_formatter_classic' => $vendorDir . '/leafo/lessphp/lessc.inc.php',
-    'lessc_formatter_compressed' => $vendorDir . '/leafo/lessphp/lessc.inc.php',
-    'lessc_formatter_lessjs' => $vendorDir . '/leafo/lessphp/lessc.inc.php',
-    'lessc_parser' => $vendorDir . '/leafo/lessphp/lessc.inc.php',
+    'lessc' => $vendorDir . '/oyejorge/less.php/lessc.inc.php',
 );

@@ -17,25 +17,25 @@
     </head>
 
     <body>
-        {% block body %}
+        {% block container %}
             {% block header%}
-                {% include '::frontend/partial:header.html.twig' %}
+                {% include '::frontend/partial/header.html.twig' %}
             {% endblock %}
             <div class="container">
                 <div class="container-fluid">
                     <div class="jumbotron">
                         {% block messages %}
-                            {% include '::frontend/partial:messages.html.twig' %}
+                            {% include '::frontend/partial/messages.html.twig' %}
                         {% endblock %}
 
-                        {% block container %}
+                        {% block body %}
 
-                        {% endblock container %}
+                        {% endblock body %}
                     </div>
                 </div>
             </div>
             {% block footer %}
-                {% include '::frontend/partial:footer.html.twig' %}
+                {% include '::frontend/partial/footer.html.twig' %}
             {% endblock %}
         {% endblock %}
 

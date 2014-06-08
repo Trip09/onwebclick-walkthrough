@@ -5,15 +5,14 @@ assetic:
     yui_js:
       jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.8.jar
     lessphp:
-      file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
+      file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
       apply_to: "\.less$"
 #    uglifyjs2:
 #        bin: /usr/local/bin/uglifyjs
   assets:
     jquery_js:
         inputs:
-            - '%kernel.root_dir%/app/Resources/public/js/vendor/jquery.js'
-        output: static/js/jquery.js
+            - '%kernel.root_dir%/Resources/public/js/vendor/jquery.js'
         filters: [?yui_js]
 
     bootstrap_js:
@@ -30,10 +29,8 @@ assetic:
             - '%kernel.root_dir%/../vendor/twitter/bootstrap/js/collapse.js'
             - '%kernel.root_dir%/../vendor/twitter/bootstrap/js/carousel.js'
             - '%kernel.root_dir%/../vendor/twitter/bootstrap/js/affix.js'
-        output: static/js/bootstrap.js
         filters: [?yui_js]
     bootstrap_less:
         inputs:
             - '%kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less'
-        output: static/js/bootstrap.css
         filters: [lessphp,cssembed]
