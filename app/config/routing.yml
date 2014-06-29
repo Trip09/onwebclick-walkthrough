@@ -1,0 +1,10 @@
+IgniteYourProject_base_admin:
+    resource: "@IgniteYourProjectBaseAdminBundle/Controller"
+    type:     annotation
+
+IgniteYourProject_base_web:
+    resource: "@IgniteYourProjectBaseWebBundle/Controller"
+    type:     annotation
+
+IgniteYourProject_base_web_yml:
+    resource: "@IgniteYourProjectBaseWebBundle/Resources/config/routing.yml"

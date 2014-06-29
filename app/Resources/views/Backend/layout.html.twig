@@ -1,0 +1,50 @@
+{% extends '::base.html.twig' %}
+
+{% block header %}
+    {% include '::Backend/Partial/header.html.twig' %}
+{% endblock header %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+            {% if app.security.token and is_granted('ROLE_ADMIN') %}
+                {% block sidebar %}
+                    {% block sidebar_nav_before %}
+                    {% endblock sidebar_nav_before %}
+
+                    {% block sidebar_nav %}
+                        {{ knp_menu_render('backend_sidebar') }}
+                    {% endblock sidebar_nav %}
+
+                    {% block sidebar_nav_after %}
+                        <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href="#" rel="noreferrer" target="_blank">All rights reserved.</a></p>
+                    {% endblock sidebar_nav_after %}
+                {% endblock sidebar %}
+            {% endif %}
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h1 class="page-header">Dashboard</h1>
+                {% block messages %}
+                    {% include '::messages.html.twig' %}
+                {% endblock %}
+
+                {% block content %}
+
+                {% endblock content %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+
+{% block footer %}
+    {% include '::Backend/Partial/footer.html.twig' %}
+{% endblock %}
+
+{% block stylesheets_layout %}
+    {% stylesheets '@backend_less' %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet">
+    {% endstylesheets %}
+{% endblock %}

@@ -32,5 +32,14 @@ assetic:
         filters: [?yui_js]
     bootstrap_less:
         inputs:
-            - '%kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less'
-        filters: [lessphp,cssembed]
+            - %kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less
+        filters: [lessphp, cssembed]
+    backend_less:
+        inputs:
+            - '%kernel.root_dir%/Resources/public/less/backend.less'
+            - '%kernel.root_dir%/Resources/public/css/dashboard.css'
+        filters: [lessphp, cssembed]
+    frontend_less:
+        inputs:
+            - '%kernel.root_dir%/Resources/public/less/frontend.less'
+        filters: [lessphp, cssembed]

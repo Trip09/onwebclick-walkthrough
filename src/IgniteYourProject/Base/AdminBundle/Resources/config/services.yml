@@ -1,0 +1,18 @@
+parameters:
+    knp.menu.menu_item.class: Knp\Menu\MenuItem
+    igniteyourproject_base_admin.menu.menu_builder.class: IgniteYourProject\Base\AdminBundle\Menu\MenuBuilder
+
+services:
+
+    igniteyourproject_base_admin.menu.menu_builder:
+        class: "%igniteyourproject_base_admin.menu.menu_builder.class%"
+        arguments: ["@knp_menu.factory"]
+
+    igniteyourproject_base_adminbundle.menu.menu_builder_backend_sidebar:
+        class: "%knp.menu.menu_item.class%"
+        factory_service: "igniteyourproject_base_admin.menu.menu_builder"
+        factory_method: createBackendSideBarMenu
+        arguments: ["@request"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: backend_sidebar } # The alias is what is used to retrieve the menu

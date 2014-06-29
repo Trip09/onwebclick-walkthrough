@@ -1,48 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>{% block title %}Welcome!{% endblock %}</title>
+<head>
+    <title>{% block title %}Welcome!{% endblock %}</title>
 
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-        <!-- Bootstrap -->
-        {% block stylesheets %}
-            {% stylesheets '@bootstrap_less' combine=true %}
-                <link href="{{ asset_url }}" type="text/css" rel="stylesheet">
-            {% endstylesheets %}
-        {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <!-- Bootstrap -->
+    {% block stylesheets %}
+        {% stylesheets '@bootstrap_less'  %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet">
+        {% endstylesheets %}
+    {% endblock %}
+    {% block stylesheets_layout %}
+    {% endblock %}
 
-    </head>
+</head>
 
-    <body>
+<body>
+    {% block header %}
+    {% endblock %}
+
+    {% block body %}
         {% block container %}
-            {% block header%}
-                {% include '::frontend/partial/header.html.twig' %}
-            {% endblock %}
-            <div class="container">
-                <div class="container-fluid">
-                    <div class="jumbotron">
-                        {% block messages %}
-                            {% include '::frontend/partial/messages.html.twig' %}
-                        {% endblock %}
-
-                        {% block body %}
-
-                        {% endblock body %}
-                    </div>
-                </div>
-            </div>
-            {% block footer %}
-                {% include '::frontend/partial/footer.html.twig' %}
-            {% endblock %}
         {% endblock %}
+    {% endblock %}
 
-        {% block javascripts %}
-            {% javascripts '@jquery_js' '@bootstrap_js' filter='?yui_js' combine=true %}
-            <script src="{{ asset_url }}"></script>
-            {% endjavascripts %}
-        {% endblock %}
-    </body>
+    {% block footer %}
+    {% endblock %}
+
+    {% block javascripts %}
+        {% javascripts '@jquery_js' '@bootstrap_js' %}
+        <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+</body>
 </html>
