@@ -1,0 +1,18 @@
+{% extends '::Backend/layout.html.twig' %}
+
+    {% block content %}
+        <form class="form-signin" method="post" action="{{ path('igniteyourproject_base_admin_bundle_login_check') }}" class="form-signin">
+            <img src="{{ asset('static/img/logo.png') }}" class="Logo IgniteYourProject" />
+
+            {% if error %}
+                <div class="alert alert-danger">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <input type="text" name="_username" class="form-control input-lg" placeholder="{{ 'igniteyourproject.common.email'|trans }}"><br>
+            <input type="password" name="_password" class="form-control input-lg" placeholder="{{ 'igniteyourproject.common.password'|trans }}">
+            <hr>
+            <button class="btn btn-block btn-lg btn-success" type="submit">{{ 'igniteyourproject.common.login'|trans }}</button>
+        </form>
+    {% endblock content %}

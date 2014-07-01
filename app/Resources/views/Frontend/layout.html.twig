@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block header%}
+    {% include '::Frontend/Partial/header.html.twig' %}
+{% endblock %}
+
+{% block body%}
+<div class="container">
+    <div class="container-fluid">
+        <div class="jumbotron">
+            {% block messages %}
+                {% include '::messages.html.twig' %}
+            {% endblock %}
+
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+    </div>
+</div>
+{% endblock body%}
+
+{% block footer %}
+    {% include '::Frontend/Partial/footer.html.twig' %}
+{% endblock %}
+
+{% block stylesheets_layout %}
+    {% stylesheets '@frontend_less' %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet">
+    {% endstylesheets %}
+{% endblock %}

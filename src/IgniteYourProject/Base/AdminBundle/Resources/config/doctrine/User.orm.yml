@@ -1,0 +1,14 @@
+# src/IgniteYourProject/Base/AdminBundle/Resources/config/doctrine/User.orm.yml
+IgniteYourProject\Base\AdminBundle\Entity\User:
+    table: fos_user
+    type:  entity
+    repositoryClass: IgniteYourProject\Base\AdminBundle\Repository\User
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        current_balence:
+          type: decimal(18)
+          scale: 2
