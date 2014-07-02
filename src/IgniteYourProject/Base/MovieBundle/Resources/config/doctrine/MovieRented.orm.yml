@@ -1,0 +1,42 @@
+# src/IgniteYourProject/Base/MovieBundle/Resources/config/doctrine/MovieRented.orm.yml
+IgniteYourProject\Base\MovieBundle\Entity\MovieRented:
+    table: movie_rented
+    type:  entity
+    repositoryClass: IgniteYourProject\Base\MovieBundle\Repository\MovieRented
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        movie_id:
+            type: string
+            length: 255
+        renter_name:
+            type: string
+            length: 255
+        renter_mobile:
+            type: string
+            length: 20
+        rented_at:
+            type: datetime
+            nullable: true
+        delivered_at:
+            type: datetime
+            nullable: true
+        created_at:
+            type: datetime
+        updated_at:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks:
+        prePersist: [ setCreatedAtValue, setRentedAtValue ]
+        preUpdate: [ setUpdatedAtValue ]
+
+    manyToOne:
+        movie:
+            targetEntity: Movie
+            inversedBy: Renters
+            joinColumn:
+                name: movie_id
+                referencedColumnName: id

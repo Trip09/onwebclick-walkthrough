@@ -2,6 +2,10 @@ IgniteYourProject_base_admin:
     resource: "@IgniteYourProjectBaseAdminBundle/Controller"
     type:     annotation
 
+IgniteYourProject_base_movie:
+    resource: "@IgniteYourProjectBaseMovieBundle/Controller"
+    type:     annotation
+
 IgniteYourProject_base_web:
     resource: "@IgniteYourProjectBaseWebBundle/Controller"
     type:     annotation

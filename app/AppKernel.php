@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new IgniteYourProject\Base\AdminBundle\IgniteYourProjectBaseAdminBundle(),
             new IgniteYourProject\Base\WebBundle\IgniteYourProjectBaseWebBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new IgniteYourProject\Base\MovieBundle\IgniteYourProjectBaseMovieBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

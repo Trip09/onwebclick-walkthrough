@@ -1,0 +1,30 @@
+{% extends '::Frontend/layout.html.twig' %}
+
+{% block content -%}
+    <h1>Movie list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                {#<td><a href="{{ path('admin_movie_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>#}
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.year }}</td>
+                <td>
+                    <li>
+                        <a href="{{ path('rented_movie', { 'id': entity.id }) }}">Rent</a>
+                    </li>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

@@ -1,0 +1,15 @@
+{% extends '::Backend/layout.html.twig' %}
+
+{% block content -%}
+    <h1>Movie creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_movie') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

@@ -27,6 +27,6 @@ class BackendController extends Controller
      */
     public function dashboardAction(Request $request)
     {
-        return $this->render('IgniteYourProjectBaseAdminBundle::layout.html.twig');
+        return $this->render('::Backend/layout.html.twig');
     }
 }

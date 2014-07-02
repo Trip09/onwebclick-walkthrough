@@ -12,3 +12,4 @@ IgniteYourProject\Base\AdminBundle\Entity\User:
         current_balence:
           type: decimal(18)
           scale: 2
+          nullable: true

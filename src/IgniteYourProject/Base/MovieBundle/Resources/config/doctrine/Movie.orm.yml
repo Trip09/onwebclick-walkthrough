@@ -1,0 +1,30 @@
+# src/IgniteYourProject/Base/MovieBundle/Resources/config/doctrine/Movie.orm.yml
+IgniteYourProject\Base\MovieBundle\Entity\Movie:
+    table: movie
+    type:  entity
+    repositoryClass: IgniteYourProject\Base\MovieBundle\Repository\Movie
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+        year:
+            type: integer
+            length: 4
+        available:
+            type: integer
+            length: 4
+        created_at:
+            type: datetime
+        updated_at:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks:
+        prePersist: [ setCreatedAtValue ]
+        preUpdate: [ setUpdatedAtValue ]

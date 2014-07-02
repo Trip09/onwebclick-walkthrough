@@ -34,7 +34,9 @@ class MenuBuilder
         $menu = $this->factory->createItem('root');
         $menu->setChildrenAttributes(array('class' => 'sidebar-menu'));
 
-        $menu->addChild('Home', array('uri' => '/test'));
+        $menu->addChild('Movie', array('uri' => '/admin/movie/'));
+        $menu->addChild('Movie Rentals', array('uri' => '/admin/movie/rented/'));
+//        $menu->addChild('Movie', array('uri' => $this->generateUrl('admin_movie')));
 
 //        $menu = $this->factory->createItem('root');
 //        $menu->setChildrenAttributes(array('class' => 'sidebar-menu'));

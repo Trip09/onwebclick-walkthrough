@@ -1,0 +1,7 @@
+parameters:
+#    ignite_your_project_base_movie.example.class: IgniteYourProject\Base\MovieBundle\Example
+
+services:
+#    ignite_your_project_base_movie.example:
+#        class: %ignite_your_project_base_movie.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

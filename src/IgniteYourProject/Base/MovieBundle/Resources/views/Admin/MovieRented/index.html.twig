@@ -1,0 +1,53 @@
+{% extends '::Backend/layout.html.twig' %}
+
+{% block content -%}
+    <h1>MovieRented list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Movie_id</th>
+                <th>Renter_name</th>
+                <th>Renter_mobile</th>
+                <th>Rented_at</th>
+                <th>Delivered_at</th>
+                <th>Created_at</th>
+                <th>Updated_at</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('admin_movie_rented_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.movieid }}</td>
+                <td>{{ entity.rentername }}</td>
+                <td>{{ entity.rentermobile }}</td>
+                <td>{% if entity.rentedat %}{{ entity.rentedat|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.deliveredat %}{{ entity.deliveredat|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.createdat %}{{ entity.createdat|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedat %}{{ entity.updatedat|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('admin_movie_rented_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_movie_rented_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('admin_movie_rented_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
