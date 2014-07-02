@@ -20,7 +20,7 @@
                 <td>{{ entity.year }}</td>
                 <td>
                     <li>
-                        <a href="{{ path('rented_movie', { 'id': entity.id }) }}">Rent</a>
+                        <a id="movie-{{ entity.id }}" href="{{ path('rented_movie', { 'id': entity.id }) }}">Rent</a>
                     </li>
                 </td>
             </tr>
